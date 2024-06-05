@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Translator</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+    #output {
+        margin-top: 20px;
+    }
+    .button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .button:hover {
+        background-color: #0056b3;
+    }
+</style>
+</head>
+<body>
+<h1>Translator</h1>
+<textarea id="input" rows="4" cols="50" placeholder="Enter text here..."></textarea><br>
+<button class="button" onclick="translate()">Translate</button>
+<div id="output"></div>
+
+<script>
+function translate() {
+    var inputText = document.getElementById("input").value;
+    var outputText = '';
+
+    for (var i = 0; i < inputText.length; i++) {
+        var char = inputText.charAt(i);
+        outputText += translateChar(char);
+    }
+
+    document.getElementById("output").innerHTML = outputText;
+}
+
+function translateChar(char) {
+    var translation = {
+        "a": "আ",
+        "b": "ব",
+        "c": "সি",
+        "d": "ডি",
+        "e": "ই",
+        "f": "এফ",
+        "g": "জি",
+        "h": "এইচ",
+        "i": "আই",
+        "j": "জে",
+        "k": "কে",
+        "l": "এল",
+        "m": "এম",
+        "n": "এন",
+        "o": "ও",
+        "p": "পি",
+        "q": "কিউ",
+        "r": "আর",
+        "s": "এস",
+        "t": "টি",
+        "u": "ইউ",
+        "v": "ভি",
+        "w": "ডাবলু",
+        "x": "এক্স",
+        "y": "ওয়াই",
+        "z": "জেড"
+    };
+
+    return translation[char.toLowerCase()] || char;
+}
+</script>
+
+</body>
+</html>

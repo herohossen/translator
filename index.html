@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Converter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Text Converter</h1>
+        <textarea id="inputText" placeholder="Type here..."></textarea>
+        <button onclick="convertText()">Convert</button>
+        <div id="outputText" class="output"></div>
+
+        <h2>Add New Word Pair</h2>
+        <input type="text" id="word" placeholder="Word (e.g., ami)">
+        <input type="text" id="translation" placeholder="Translation (e.g., আমি)">
+        <button onclick="addWordPair()">Add Word Pair</button>
+    </div>
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
